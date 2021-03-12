@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>About BoB 0x10</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="assets/css/map.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><span>BoB 0x10</span></a></h1>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AsearchByDate.html">Date</a></li>
+            <li><a href="AsearchByMonth.html">Month</a></li>
+            <li><a href="AsearchByPerson.html">Name</a></li>
+            <li><a href="AsearchByMAC.html">MAC</a></li>
+            <li><a href="AviewAll.html">View All</a></li>
+            <li class="active"><a href="Amap.html">Map</a></li>
+            <li><a href="Aregister.html">REGISTER</a></li>
+            <li><a id="topUserId" href= "BackendConn_out.html" style="color:whitesmoke; font-style: italic; font-size: 15px;"></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Kitri BoB center</h2>
+          <ol>
+            <li><a href="Aindex.html">Home</a></li>
+            <li>Map</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+          <div class="container-M">
+          <div class="M2" style="position: relative; width: 65%;" id ="centerIMG">
+            <script type="text/javascript">
+              function movepage(page)
+              {
+              window.document.location.href=page;
+              return;
+                }
+              </script>
+
+            <img src="assets/img/BoB_center.png" style="width: 680px;">
+            <div id = "point" style="font-size: 6em; font-weight: bold; position: absolute;">
+              <div id = "userimg" >
+              </div>
+            </div>
+     
+          </div>
+
+
+          <div class="M1" style="width: 35%;">
+            <h3 class="font-italic" style="margin-bottom: 0px;">Who's there? 
+                <input type="button" class = "button" value="Search Time"  onclick="movepage('Amap.html')" >                                         
+            </h3>
+        
+
+            <p class="font-italic">
+              <!--Specify a date so you can easily see who was in which location in your administration.-->
+              <div class="input-group">
+                <input type="text" id = "inputdate" class="form-control" placeholder="YYYY/MM/DD" style="margin-bottom: 5px; margin-top: 5px; ">
+                <input type="text" id = "inputtime"  class="form-control" placeholder=" HH : MM " style="margin-bottom: 5px; margin-top: 5px;" maxlength="5"/>
+
+              </div>
+            </p>
+            <ul> 
+              <li>
+                <div>
+                  <table id="target" class="list-table" style="margin: auto;">
+                      <tr class="list-info">
+                        <th>Room Number</th>
+                        <th>Name</th>
+                        <th>Device ID</th>
+                  </table>
+              </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+<!-- The Modal -->
+<div id="myModal" class = "modal">
+</div>
+
+    <!-- ======= Facts Section ======= -->
+    <section class="facts section-bg" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span id="R2" data-toggle="counter-up"></span>
+            <p>Lecture Room 2</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span id="R3" data-toggle="counter-up"></span>
+            <p>Lecture Room 3</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span id="R4" data-toggle="counter-up"></span>
+            <p>Lecture Room 4</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span id="PT" data-toggle="counter-up"></span>
+            <p>PT Room</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+  </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+      <div class="container">
+        <div class="credits">
+          BEST OF THE BEST   <a href="https://www.kitribob.kr">KITRI</a>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
+
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!--datepicker-->
+<link rel = "stylesheet" href="assets/jquery-ui/jquery-ui.css" type ="text/css"/>
+<script src="assets/jquery-ui/jquery-ui.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+//미리 지정 
+var centerIMG = document.getElementById("centerIMG");
+var newMODAL = document.getElementById("myModal");
+
+$(function() {
+      timer = setInterval( function () {
+      
+//현재 시간 받기 
+let today = new Date();
+
+let year = today.getFullYear();
+let month = today.getMonth() + 1; 
+let date = today.getDate();
+let hours = today.getHours();
+let minutes = today.getMinutes();
+
+if(month.toString().length <= 1) month = '0' + month;
+if(date.toString().length <= 1) date = '0' + date;
+if(hours.toString().length <= 1) hours = '0' + hours;
+if(minutes.toString().length <= 1) minutes = '0' + minutes;
+
+
+var thistime = ""+year+""+month+""+date+""+hours+""+minutes ; 
+console.log(thistime);
+
+$(document).ready(function() {
+        $('#inputdate').val(""+year+""+month+""+date);
+        $('#inputtime').val(""+hours+":"+minutes);
+    });
+
+
+
+
+//코드 복사 시작 
+  //inputtime = thistime;
+  var searchurl = 'https://bob0x10.ga/api/map/date/';
+  searchdate = inputdate+thistime; //inputtime
+  var finalURL = searchurl + thistime; //searchdate
+  console.log(finalURL);
+  var roomlist = [0,0,0,0]; //[2강의실, 3강의실, 4강의실, PT room(5라고가정)]
+
+  //모달 초기화
+  $('#myModal').empty();
+  //이미지 초기화 
+  for(var i = 0; i < 30 ; i++)
+  {
+  $("#userimg"+i).empty();
+  }
+
+
+  $.ajax({
+    type:"get",
+    url : finalURL,
+    async: false,
+    cache : false, //캐시제거
+    dataType: "json",
+    success: function(data){
+      for(var i = 0; i < data.length; i++){
+        if(data[i].roomid == 2){
+          var cnt = data[i].count;
+          roomlist[0] += cnt;
+        }
+        else if (data[i].roomid == 3){
+          var cnt = data[i].count;
+          roomlist[1] += cnt;
+        }
+        else if (data[i].roomid == 4){
+          var cnt = data[i].count;
+          roomlist[2] += cnt;
+        }
+        else if (data[i].roomid == 5){
+          var cnt = data[i].count;
+          roomlist[3] += cnt;
+        }
+      }
+      document.getElementById("R2").innerHTML=roomlist[0];
+      document.getElementById("R3").innerHTML=roomlist[1];
+      document.getElementById("R4").innerHTML=roomlist[2];
+      document.getElementById("PT").innerHTML=roomlist[3];
+
+      for(var i = 0; i < data.length; i++){ //반복문 추가 
+      for(var j = 0; j < data[i].members.length; j++){
+        var tempimgTAG = "#userimg";
+        var tempmodTAG = "#modal";
+        var tempimg = "userimg";
+        var tempmod = "modal";
+        tempimgTAG+=(j);
+        tempimg += (j);
+        var newDIV = document.createElement("div");
+        newDIV.setAttribute("id",tempimg);
+        centerIMG.appendChild(newDIV);
+      var inputX = [];
+      var inputY = [];
+
+      inputX[j] = data[i].members[j].position.x;
+      inputY[j] = data[i].members[j].position.y;
+      inputX[j] = (inputX[j])/54.4 * 650;
+      inputY[j] = (inputY[j])/33.9 * 380;
+
+      for(var k = (j-1) ; k>=0; k--){
+        if(inputX[j]==inputX[k]){
+            inputX[j] = (inputX[j]) + 30;
+            console.log(inputX[j]);
+            console.log(inputX[k]);
+            console.log('same!!!!!!!!!!!');
+          }
+      }
+      
+
+
+      inputX[j]+= 'px';
+      inputY[j]+= 'px';
+
+      var userid = data[i].members[j].member.id; //API에 맞게 변경 
+      var img = "https://bob0x10.ga/img/" + userid; 
+      $(tempimgTAG).empty();
+      $("#modal"+j).empty();//초기화
+
+      //이미지 좌표로 바로 넣기
+      $("#userimg"+j).each(function(userimg){
+      var imgurl = "";
+      imgurl = "<a href ="+"javascript:openModal("+"'modal"+j+"'"+");"+">"
+      +"<img id = "+userid+""+j+" src = '" +img 
+      + "' class = "+'img'+" style = " +" 'position: absolute;' "
+      + " onmouseover = \"openModal("+"'modal"+j+"'"+")\""
+      + " onmouseout = \"closeModal("+"'modal"+j+"'"+")\""
+      +"/>"
+      +"</a>"; 
+      $(tempimgTAG).append(imgurl);
+      $("#"+userid+""+j).css("bottom", inputY[j]);
+      $("#"+userid+""+j).css("left", inputX[j]);
+      $("#"+userid+""+j).css("width", '35px');
+    });
+      
+    // 각각 모달 레이어를 집어넣는 방식 
+    var lay = [];
+    lay[j] = '';
+    lay[j] =  "<div class = 'modal-con modal"+j+"'>"
+              +"<a href="+"'javascript:;'"+" class = 'close'>X</a>"
+              +"<p class = 'title' style='color:white;'><b>"+"User Information"+"</b></p>"
+    +"<div class='container mt-5 d-flex justify-content-center' style='margin-top:2rem!important'>"
+    +"<div class='card p-1'>"
+        +"<div class='d-flex align-items-center'>"
+            +"<div class='image'> <img src='"+img+"' class='rounded' width='100'> </div>"
+            +"<div class='ml-3 w-800'>"
+                +"<a style='font-weight: bold; font-size: 20px;' class='mb-0 mt-0'><b>"+data[i].members[j].member.name+"</b></a>" 
+                +"<span style='font-weight: bold; font-size: 15px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID :  </span> <span style='font-size: 13px;'> "+userid+"</span>"
+      +"<div class='twPc-divStats'>"
+         +"<ul class='twPc-Arrange'>"
+            +"<li class='twPc-ArrangeSizeFit'>"
+                 +"<span class='twPc-StatLabel twPc-block'>Room</span>"
+                  +"<span class='twPc-StatValue' style='text-align:center;'><center>"+data[i].roomid+"</center></span>"
+            +"</li>"
+            +"<li class='twPc-ArrangeSizeFit'>"
+        +"&nbsp"
+            +"</li>"
+        +"<li class='twPc-ArrangeSizeFit'>"
+        +"&nbsp"
+            +"</li>"
+      
+            +"<li class='twPc-ArrangeSizeFit'>"   
+                  +"<span class='twPc-StatLabel twPc-block'>Device</span>"
+                 +"<span class='twPc-StatValue' style='text-align:center;'><center>"+data[i].members[j].attinfo.deviceid+"</center></span>"
+            +"</li>"
+         +"</ul>"
+      +"</div>"
+          +"</div>"
+   +"</div>"
++"</div>"
+              +"</div>"
+              +"</div>";
+
+    $('#myModal').append(lay[j]);
+      }}
+    }
+  })
+
+$.getJSON(finalURL,function(data){
+    $('#target').css("visibility", "visible").css("border", "1px solid black");
+    $("#target > tbody > tr > td").remove();
+    $("#target").append("<tbody>");
+    for(var i = 0; i < data.length; i++){
+      for(var j = 0; j < data[i].members.length; j++){
+      $('#target').append("<tr><td>"+data[i].roomid+ "</td><td>"
+                                  +data[i].members[j].member.name+ "</td><td>"
+                                    +data[i].members[j].attinfo.deviceid+ "</td><tr>"
+                                  );
+      }
+    }
+    $('#target').append("</tbody>");
+
+}).fail(function(){
+       console.log("can not found this url");
+   })
+ 
+  }, 5000); //5초에 한번씩 받아온다. 
+  });
+
+$(function(){
+$("#inputdate").datepicker({
+showButtonPannel: true,
+currentText: 'today',
+closeText: 'exit',
+dateFormat: "yymmdd"
+});
+});
+
+//시간 입력
+function inputTimeColon(time) {
+// replace 함수를 사용하여 콜론( : )을 공백으로 치환한다.
+var replaceTime = time.value.replace(/\:/g, "");
+
+// 텍스트박스의 입력값이 4~5글자 사이가 되는 경우에만 실행한다.
+if(replaceTime.length >= 4 && replaceTime.length < 5) {
+    var hours = replaceTime.substring(0, 2);      // 선언한 변수 hours에 시간값을 담는다.
+    var minute = replaceTime.substring(2, 4);    // 선언한 변수 minute에 분을 담는다.
+    // isFinite함수를 사용하여 문자가 선언되었는지 확인한다.
+    if(isFinite(hours + minute) == false) {
+        alert("Text cannot be entered.");
+        time.value = "00:00";
+        return false;
+    }
+    // 두 변수의 시간과 분을 합쳐 입력한 시간이 24시가 넘는지를 체크한다.
+    if(hours + minute > 2400) {
+        alert("The Hours can't be past 24:00.");
+        time.value = "24:00";
+        return false;
+    }
+
+    // 입력한 분의 값이 60분을 넘는지 체크한다.
+    if(minute > 60) {
+        alert("The Minutes cannot exceed 60 minutes.");
+        time.value = hours + ":00";
+        return false;
+    }
+
+    time.value = hours + ":" + minute;
+}
+}
+
+//모달 함수 
+function openModal(modalname){
+    document.get
+   $("#myModal").show();
+   $("."+modalname).show();
+  }
+
+  function closeModal(modalname){
+  $("#myModal").hide();//modal
+  $(".modal-con").hide();
+}
+   
+  $("#myModal, .close").on('click',function(){
+    $("#myModal").fadeOut(300);//modal
+    $(".modal-con").fadeOut(300);
+  });
+
+   var modal = document.getElementById('myModal');
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+            if (event.target != modal) {//modal
+           $("#myModal").fadeOut(300);//modal
+           $(".modal-con").fadeOut(300);
+            }
+        }
+
+console.log(localStorage.getItem("progID"))
+var progID = localStorage.getItem("progID");
+
+if(!localStorage.getItem("proID")){ //새로고침 방지 
+localStorage.setItem("progID", progID);
+}
+
+
+function logoutProcess(){
+    console.log("logoutProcess");
+    localStorage.removeItem("progID");
+    alert('Logout!');
+    location.replace('BackendConn.html');
+}
+
+  function checkStatus(){
+    console.log("checkStatus");
+    
+    if(progID == 'null'){ //null 인 아이디 사용불가! 
+      alert('Invalid access. Please connect again');
+      location.replace('BackendConn.html');
+    }
+}
+
+function init(){
+    checkStatus();
+}
+
+init();
+
+$(document).ready(function() {
+    var progID = localStorage.getItem("progID");
+    $('#inputprogID').val(localStorage.getItem("progID"));
+    $('#topUserId').text("Accessed ");
+});
+
+
+
+</script>
+
+</body>
+
+</html>

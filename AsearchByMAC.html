@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>BoB 0x10</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel = "stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/searchByPerson.css" rel="stylesheet">
+  
+  <!--donught css-->
+  <link type="text/css" rel="stylesheet" href="assets/css/default.css"/>
+
+  <!-- calendar -->
+  <link href='assets/fullcalendar-5.3.2/lib/main.css' rel='stylesheet' />
+  <script src='assets/fullcalendar-5.3.2/lib/main.js'></script>
+  <!-- <script src = "assets/js/calendar.js"></script>-->
+
+  <link rel="shortcut icon" href="assets/img/icon_temp.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="index.html"><img src="assets/img/whiteicon.png" alt="" class="img-fluid"></a><a href="index.html"><span> BoB 0x10</span></a></h1>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AsearchByDate.html">Date</a></li>
+          <li><a href="AsearchByMonth.html">Month</a></li>
+          <li><a href="AsearchByPerson.html">Name</a></li>
+          <li class="active"><a href="AsearchByMAC.html">MAC</a></li>
+          <li><a href="AviewAll.html">View All</a></li>
+          <li><a href="Amap.html">Map</a></li>
+          <li><a href="Aregister.html">REGISTER</a></li>
+          <li><a id="topUserId" href= "BackendConn_out.html" style="color:whitesmoke; font-style: italic; font-size: 15px;"></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Intro Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Search By MAC address</h2>
+          <ol>
+            <li><a href="Aindex.html">Home</a></li>
+            <li>By MAC</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Intro Section -->
+
+    <!-- ======= Search Section ======= -->
+    <section class="pricing section-bg" data-aos="fade-up">
+
+      <div class="container">
+        <div class="section-title">
+          <h2>Enter the Date and MAC address</h2>
+          <p>You can check specific one's attendance and detail information.</p>
+        </div>
+
+        <div class="input-group">
+          <input type="text" name = "name" id = "inputname" class="form-control" placeholder="MAC address" style="margin-bottom: 20px; margin-top: 20px;">
+          <input type="text" id = "inputdate" class="form-control" placeholder="Date" style="margin-bottom: 20px; margin-top: 20px;">
+          <button onclick="input()" style="margin-bottom: 20px; margin-top: 20px;">SEARCH</button>
+        </div>
+
+        <div class="container-M"
+              style="background-image: URL(assets/img/tempBG.jpg);
+                      background-repeat: no-repeat;
+                      background-size: cover;">
+          <div class="M1">
+            <div class="section-title" style="padding-bottom: 10px;">
+              <p>Device List</p>
+            </div>
+              <table id="target" class="list-table" style="margin-left: 0px; margin-right: 0px;">
+                  <tr class="list-info">
+                      <th>Mac Address</th>
+                      <th>Device ID</th>
+              </table>
+              <br>
+              <br>
+              <div class="section-title" style="padding-bottom: 10px;">
+                <p>Details about Time spent</p>
+              </div>
+              <table id="target2" class="list-table" style="margin-left: 0px; margin-right: 0px;">
+                <tr class="list-info">
+                    <th>Room Number</th>
+                    <th>Enter Time</th>
+                    <th>Exit Time</th>
+                    <th>Time Spent</th>
+              </table>
+              <br>
+            
+          </div>
+  
+          <div class="M2">
+              <div class="chart-container" >
+                  <div class="doughnut-chart-container">
+                                <br>
+                                <br>
+                      <canvas id="doughnut-chartcanvas-2"></canvas>
+                  </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <div class="section-title" style="padding-bottom: 10px; padding-left: 75px;">
+                <p>Attendance Rate</p>
+              </div>
+              <br>
+  
+          </div>
+      </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="container">
+      <div class="credits">
+        BEST OF THE BEST   <a href="https://www.kitribob.kr">KITRI</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/Chart.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!--datepicker-->
+  <link rel = "stylesheet" href="assets/jquery-ui/jquery-ui.css" type ="text/css"/>
+  <script src="assets/jquery-ui/jquery-ui.min.js"></script>
+
+  <script type="text/javascript">
+      var searchmac;
+      var searchdate;
+      var searchid;
+      function input(){
+      var inputmac = document.getElementById("inputname").value;
+      var inputdate = document.getElementById("inputdate").value;
+      
+      searchmac = inputmac;
+      searchdate = inputdate;
+
+      //https://bob0x10.ga/api/mac/8a:cb:16:ab:34:46/date/20201010
+      var progID = localStorage.getItem("progID");
+      var searchurl = 'https://' + progID+ '/api/mac/'+searchmac+'/date/'+searchdate;
+      
+      $.ajax({
+        type:"get",
+        url : searchurl,
+        async: false,
+        dataType: "json",
+        success: function(data){ 
+          $('#target').css("visibility", "visible").css("border", "1px solid green");
+            $("#target > tbody > tr > td").remove();
+            $("#target").append("<tbody>");
+                $('#target').append("<tr><td>"+data['deviceList'][0].macaddr+"</td><td>"
+                                            +data['deviceList'][0].deviceid+"</td><tr>"
+                                    );
+                
+            $('#target').append("</tbody>");     
+
+          var chart2 = null;
+
+          var timeData = new Array(data['count']*2 + 1); //도넛나뉘는 개수만큼 array에 넣음.
+          timeData[0] = 0;
+          timeData[data['count']*2+1] = 86400; //하루를 초로 환산 
+          for( var i=0 ; i< data['count'] ; i++){
+              timeData[2*(i)+1] = data['data'][i].entertime;
+              timeData[2*(i)+2] = data['data'][i].exittime;
+          }
+          
+          var donutData = new Array(timeData.length-1); 
+          //시간값들 차이만큼 donutData에 넣었음.
+          //도넛 시간 차이값들이 timedata - 1만큼 나옴 
+          for( var i=0; i<timeData.length; i++){
+              donutData[i] = Math.round( ((-1)* (timeData[i] - timeData[i+1]))/86400 *100); //소수 둘째짜리까지
+              //donutData[i].push(Math.round( ((-1)* (timeData[i] - timeData[i+1]))/86400 *100));
+          }
+
+          $('#target2').css("visibility", "visible").css("border", "1px solid green");
+            $("#target2 > tbody > tr > td").remove();
+            $("#target2").append("<tbody>");
+              for(var j = 0; j < data['count']; j++){
+                var h = String(parseInt(data['data'][j].entertime/3600))
+                var m = String(parseInt((data['data'][j].entertime%3600)/60))
+                var s = String(((data['data'][j].entertime%3600)%60))
+                var entertime = h + "h " + m + "m " + s + "s";
+
+                var h = String(parseInt(data['data'][j].exittime/3600))
+                var m = String(parseInt((data['data'][j].exittime%3600)/60))
+                var s = String(((data['data'][j].exittime%3600)%60))
+                var exittime = h + "h " + m + "m " + s + "s";
+
+                var tempspent = data['data'][j].exittime - data['data'][j].entertime;
+                var h = String(parseInt(tempspent/3600))
+                var m = String(parseInt((tempspent%3600)/60))
+                var s = String(((tempspent%3600)%60))
+                var spenttime = h + "h " + m + "m " + s + "s";
+               
+                $('#target2').append("<tr><td>"+data['data'][j].roomid+"</td><td>"
+                                            +entertime+"</td><td>"
+                                            +exittime+"</td><td>"
+                                            +spenttime+"</td><tr>"
+                                    );
+                                }
+            $('#target2').append("</tbody>");
+
+          //도넛 데이터 라벨 및 색깔 배치 
+          var label = new Array(timeData.length-1);
+             label[0]= "Absence Ratio";
+          var color = new Array(timeData.length-1);
+             color[0]="#FFFFFF";
+            
+          if ( timeData.length > 0 )
+          {
+          for( var i=1; i<timeData.length-1; i++){
+            if ( i % 2 != 0){  
+              var h = String(parseInt(timeData[i]/3600))
+              var m = String(parseInt((timeData[i]%3600)/60))
+              var enterTime = h + "h " + m + "m ";
+
+              var h = String(parseInt(timeData[i+1]/3600))
+              var m = String(parseInt((timeData[i+1]%3600)/60))
+              var exitTime = h + "h " + m + "m ";
+
+             label[i] ="Enter: "+ enterTime + "\n Exit: "+exitTime + "\n Ratio";
+             color[i] = "#DCDCDC";
+            }  
+            if ( i % 2 == 0){
+              label[i] ="Absence Ratio";
+              color[i] = "#FFFFFF";
+          }
+          }
+
+          var brcolor = new Array(timeData.length-1);
+          var brwidth = new Array(timeData.length-1);
+          for ( var i=0; i<timeData.length-1; i++){
+            brcolor[i] = "#CBCBCB";
+            brwidth[i] = "1";
+          }
+
+          console.log(label);
+
+          //get the doughnut chart canvas
+          var ctx2 = null;
+              ctx2 = $("#doughnut-chartcanvas-2");
+        
+          //doughnut chart data
+          var data = null;
+          data2 = {
+              labels: label,
+              datasets: [
+                  {
+                      label: "",
+                      data: donutData,
+                      backgroundColor: color,
+                      borderColor: brcolor,
+                      borderWidth: brwidth
+                  }
+              ]
+          };
+
+          //options
+          var options = {
+              respoznsive: true,
+              title: {
+                  display: true,
+                  position: "bottom",
+                  text: " ",
+                  fontSize: 25,
+                  fontColor: "#111"
+              },
+              legend: {
+                  display: false,
+                  position: "bottom",
+                  labels: {
+                      fontColor: "#333",
+                      fontSize: 16
+                  }
+              }
+          };
+              if (chart2) {    chart2.destroy();  }
+              //delete chart2;
+              chart2 = new Chart(ctx2, {
+              type: "doughnut",
+              data: data2,
+              options: options
+          });
+              //$('#chart2').update();
+             
+          
+         // this.chart2.update();
+          //chart2.update();
+      }
+      //else 문 자리 
+      }
+      }).fail(function(){
+        alert("There is no attendance record on that date.")
+     console.log("can not found this url");
+     history.go(0);
+   })
+
+
+
+      }
+    $(function(){
+    $("#inputdate").datepicker({
+      showButtonPannel: true,
+      currentText: 'today',
+      closeText: 'exit',
+      dateFormat: "yymmdd"
+    });
+  });
+
+
+//로그인되어있는지 확인 
+console.log(localStorage.getItem("progID"))
+var progID = localStorage.getItem("progID");
+
+if(!localStorage.getItem("proID")){ //새로고침 방지 
+localStorage.setItem("progID", progID);
+}
+
+
+function logoutProcess(){
+    console.log("logoutProcess");
+    localStorage.removeItem("progID");
+    alert('Logout!');
+    location.replace('BackendConn.html');
+}
+
+  function checkStatus(){
+    console.log("checkStatus");
+    
+    if(progID == 'null'){ //null 인 아이디 사용불가! 
+      alert('Invalid access. Please connect again');
+      location.replace('BackendConn.html');
+    }
+}
+
+function init(){
+    checkStatus();
+}
+
+init();
+
+$(document).ready(function() {
+    var progID = localStorage.getItem("progID");
+    $('#topUserId').text("Accessed ");
+});
+    
+    </script>
+  
+</body>
+      
+</html>
